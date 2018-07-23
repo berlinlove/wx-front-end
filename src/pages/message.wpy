@@ -1,0 +1,28 @@
+<template>
+  <view>
+    <view>this is message! {{showData}}</view>
+    <testComponent :showData="showData"></testComponent>
+  </view>
+</template>
+
+<style lang="less">
+</style>
+
+<script>
+  import wepy from 'wepy';
+  import TestComponent from '../components/testComponent';
+
+  export default class Message extends wepy.page {
+    config = {
+      navigationBarTitleText: '消息'
+    };
+
+    data = {
+      showData: 'message data!'
+    };
+
+    components = {
+      testComponent: TestComponent
+    };
+  }
+</script>

@@ -1,0 +1,18 @@
+<template>
+  <view>
+    <view>this is Home!</view>
+  </view>
+</template>
+
+<style lang="less">
+</style>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Home extends wepy.page {
+    config = {
+      navigationBarTitleText: '消息'
+    };
+  }
+</script>

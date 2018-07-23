@@ -1,0 +1,45 @@
+<template>
+  <view class="component">
+    <view wx:if="{{isComponent}}">
+      <view>this is component showData: {{showData}}</view>
+    </view>
+    <view wx:else>
+      <view>this is component else!</view>
+    </view>
+  </view>
+</template>
+
+<style lang="less">
+  .component {
+    padding: 20rpx 0;
+    background-color: red;
+    border: 1 rpx solid black;
+  }
+</style>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class TestComponent extends wepy.component {
+    props = {
+      showData: String
+    };
+
+    data = {
+      isComponent: true
+    };
+
+    components = {};
+
+    onLoad () {
+      console.log(this.showData);
+      console.log(this.$parent.showData);
+    };
+
+    computed = {};
+
+    methods = {};
+
+    events = {};
+  }
+</script>

@@ -1,5 +1,6 @@
 <style lang="less">
-.container {
+  @import "./styles/base";
+  .container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -13,17 +14,40 @@
 import wepy from 'wepy'
 import 'wepy-async-function'
 
-
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/home',
+      'pages/message',
+      'pages/profile'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      'color': '#999999',
+      'selectedColor': '#ff6a3c',
+      'backgroundColor': '#ffffff',
+      'borderStyle': 'black',
+      'list': [{
+        'pagePath': 'pages/home',
+        'text': '首页',
+        'iconPath': 'images/icon_home.png',
+        'selectedIconPath': 'images/icon_home_active.png'
+      }, {
+        'pagePath': 'pages/message',
+        'text': '消息',
+        'iconPath': 'images/icon_classify.png',
+        'selectedIconPath': 'images/icon_classify_active.png'
+      }, {
+        'pagePath': 'pages/profile',
+        'text': '我的',
+        'iconPath': 'images/icon_info.png',
+        'selectedIconPath': 'images/icon_info_active.png'
+      }]
     }
   }
 
